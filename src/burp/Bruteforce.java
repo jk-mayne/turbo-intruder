@@ -25,18 +25,16 @@ public class Bruteforce {
     private static String num2word(int num)
     {
         String number = num2String(num);
-        if (number.contains("0"))
-        {
-            return null;
-        }
+        //removed check for 0
         return number;
     }
 
-    private static char[] DIGITS = {'0', 'a' , 'b' ,
-            'c' , 'd' , 'e' , 'f' , 'g' , 'h' ,
-            'i' , 'j' , 'k' , 'l' , 'm' , 'n' ,
-            'o' , 'p' , 'q' , 'r' , 's' , 't' ,
-            'u' , 'v' , 'w' , 'x' , 'y' , 'z'};
+    private static char[] DIGITS = {
+    '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 
+    'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+    'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
+    };
+
 
     private static String num2String(int i) {
 
@@ -45,7 +43,7 @@ public class Bruteforce {
             throw new IllegalArgumentException("+ve integers only please");
         }
 
-        char buf[] = new char[7];
+        char buf[] = new char[7]; //max length of 7? wack...
         int charPos = 6;
 
         i = -i;
